@@ -1,0 +1,20 @@
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
+index 29a081e72..979e81967 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-one-plus.dts
+@@ -24,6 +24,15 @@ reg_gmac_3v3: gmac-3v3 {
+ 	};
+ };
+ 
++&sound_hdmi {
++	status = "okay";
++};
++
++&i2s1 {
++	status = "okay";
++};
++
++
+ &emac {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&ext_rgmii_pins>;

@@ -1,0 +1,13 @@
+diff --git a/configs/beelink_x2_defconfig b/configs/beelink_x2_defconfig
+index f436ab1d..e6f5684d 100644
+--- a/configs/beelink_x2_defconfig
++++ b/configs/beelink_x2_defconfig
+@@ -9,7 +9,7 @@ CONFIG_MMC_SUNXI_SLOT_EXTRA=2
+ CONFIG_DEFAULT_DEVICE_TREE="sun8i-h3-beelink-x2"
+ # CONFIG_SYS_MALLOC_CLEAR_ON_INIT is not set
+ CONFIG_SPL=y
+-CONFIG_SPL_I2C_SUPPORT=y
++CONFIG_SPL_I2C=y
+ # CONFIG_CMD_IMLS is not set
+ # CONFIG_CMD_FLASH is not set
+ # CONFIG_CMD_FPGA is not set

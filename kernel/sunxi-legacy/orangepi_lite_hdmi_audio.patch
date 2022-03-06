@@ -1,0 +1,34 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-orangepi-lite.dts b/arch/arm/boot/dts/sun8i-h3-orangepi-lite.dts
+index 6f9c97add..17139a21f 100644
+--- a/arch/arm/boot/dts/sun8i-h3-orangepi-lite.dts
++++ b/arch/arm/boot/dts/sun8i-h3-orangepi-lite.dts
+@@ -98,6 +98,14 @@ sw4 {
+ 	};
+ };
+ 
++&codec {
++	allwinner,audio-routing =
++		"Line Out", "LINEOUT",
++		"MIC1", "Mic",
++		"Mic",  "MBIAS";
++	status = "okay";
++};
++
+ &de {
+ 	status = "okay";
+ };
+@@ -120,6 +128,14 @@ hdmi_out_con: endpoint {
+ 	};
+ };
+ 
++&hdmi_sound {
++	status = "okay";
++};
++
++&i2s2 {
++	status = "okay";
++};
++
+ &ir {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&r_ir_rx_pin>;

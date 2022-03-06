@@ -1,0 +1,38 @@
+diff --git a/arch/arm/boot/dts/sun8i-h2-plus-sunvell-r69.dts b/arch/arm/boot/dts/sun8i-h2-plus-sunvell-r69.dts
+index bb0c2f72b..8afcd99b2 100644
+--- a/arch/arm/boot/dts/sun8i-h2-plus-sunvell-r69.dts
++++ b/arch/arm/boot/dts/sun8i-h2-plus-sunvell-r69.dts
+@@ -87,6 +87,18 @@ wifi_pwrseq: wifi_pwrseq {
+ 	};
+ };
+ 
++&codec {
++	allwinner,audio-routing =
++		"Line Out", "LINEOUT",
++		"MIC1", "Mic",
++		"Mic",  "MBIAS";
++	status = "okay";
++};
++
++&de {
++	status = "okay";
++};
++
+ &cpu0 {
+ 	cpu-supply = <&reg_vdd_cpux>;
+ };
+@@ -120,6 +132,14 @@ hdmi_out_con: endpoint {
+ 	};
+ };
+ 
++&sound_hdmi {
++	status = "okay";
++};
++
++&i2s2 {
++	status = "okay";
++};
++
+ &ir {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&r_ir_rx_pin>;		/* <&r_ir_rx_pin> */
