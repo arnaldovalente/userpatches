@@ -288,6 +288,7 @@ install_retropie() {
 	if [ ! -z "$platform" ]; then
 
 		modules=(
+			'libdrm'
 			'mesa3d'
 			'setup basic_install'
 			'bluetooth depends'
