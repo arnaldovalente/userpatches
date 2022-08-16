@@ -18,6 +18,7 @@ BOARD=$3
 BUILD_DESKTOP=$4
 ARCH=$5
 BOARDFAMILY=$6
+BUILDBINARY=$7
 
 #--------------------------------------------------------------------------------------------------------------------------------
 # Let's have unique way of displaying alerts
@@ -272,7 +273,7 @@ binary_builder_retropie() {
 
 		mapfile -t modules < "/tmp/overlay/${platform}.list"
 
-#		su -c "sudo -S __platform=${platform} __nodialog=1 /home/pi/RetroPie-Setup/retropie_packages.sh builder section core" - pi
+		su -c "sudo -S __platform=${platform} __nodialog=1 /home/pi/RetroPie-Setup/retropie_packages.sh builder section core" - pi
 		
 		for module in "${modules[@]}"; do
 			display_alert "START BUILD MODULE" "${module}" "Info"
@@ -359,8 +360,13 @@ Main() {
 
 	display_alert "RetroPi installation start..."
 	clone_retropie
-	install_retropie
-#	binary_builder_retropie
+
+	if [ "$BUILDBINARY" = true ] ; then
+		binary_builder_retropie
+	else
+		install_retropie
+	fi
+
 } # Main
 
 Main "$@"
